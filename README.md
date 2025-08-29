@@ -1,6 +1,6 @@
-# Social Network Website (HW6)
+# Social Network Website
 
-This project is a Django-based **nano-blogging social network** built as part of Homework 6 for the Web Application Development course. It extends earlier assignments to include **AJAX functionality**, enabling real-time interactions without full page reloads.
+This project is a Django-based **nano-blogging social network**  including **AJAX functionality**, enabling real-time interactions without full page reloads.
 
 ---
 
