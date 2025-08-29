@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <link href="{% static 'socialnetwork/socialnetwork.css' %}" rel="stylesheet" type="text/css">
+        <title>{% block title %}Blog Master{% endblock %}</title>
+    </head>
+    <body>
+        <div id="id_header_div" class="header">
+            <span id="id_site_name">Blog Master</span>
+
+            {% if request.user.is_authenticated %}
+                <div class="user-info">
+                    <a href="{% url 'my_profile' %}" id="id_nav_profile">
+                        {{ request.user.first_name }} {{ request.user.last_name }}  <!-- Changed to username for consistency -->
+                    </a>
+                </div>
+                <nav class="nav-links">
+                    <a href="{% url 'global_stream' %}" id="id_nav_global_stream">Global</a>
+                    <a href="{% url 'follower_stream' %}" id="id_nav_follower_stream">Follower</a>
+                    <a href="{% url 'logout' %}" id="id_nav_logout">Logout</a>
+                </nav>
+            {% else %}
+                {% if header_link_url and header_link_id and header_link %}
+                    <a href="{% url header_link_url %}" id="{{ header_link_id }}">{{ header_link }}</a>
+                {% endif %} 
+                <!-- Ensures these variables exist to prevent errors -->
+            {% endif %}
+
+            <!-- <input type="hidden" id="csrf_token" value="{% csrf_token %}"> -->
+            <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+
+
+        </div>
+
+        <div id="id_page_name">
+            {% block page_name %}{% endblock %}
+        </div>
+
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <script src="{% static 'socialnetwork/socialnetwork.js' %}"></script>
+    </body>
+</html>

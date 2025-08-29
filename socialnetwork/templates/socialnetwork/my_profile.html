@@ -1,0 +1,44 @@
+{% extends "socialnetwork/base.html" %}
+{% load static %}
+
+
+{% block title %}Profile - {{ profile_user.username }}{% endblock %}
+
+{% block page_name %}
+    <h2  >Profile Page for {{ profile_user.first_name }} {{ profile_user.last_name}}</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+        <!-- Profile Picture -->
+        {% if request.user.profile.picture %}
+            <img src="{{ request.user.profile.picture.url }}" id="id_user_picture" alt="Profile Picture">
+        {% else %}
+            <img src="{% static 'socialnetwork/sample_profile.jpg' %}" id="id_user_picture">
+        {% endif %}
+        
+        <!-- Profile Information -->
+        <form action="{% url 'my_profile' %}" method="POST" enctype="multipart/form-data">
+            <table>
+                {{form.as_table}}
+            </table>
+            {% csrf_token %}
+            <button id="id_update_profile_button">Submit</button>
+         </form>
+    </div>
+
+    <!-- Following List -->
+     <div>
+        You are following:
+        <ul>
+            {% for u in following_users %}
+                <li>
+                    <a href="{% url 'other_profile' u.id %}" id="id_profile_link_{{ u.username }}">
+                        {{u.first_name}} {{u.last_name}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+     </div>
+        
+{% endblock %}

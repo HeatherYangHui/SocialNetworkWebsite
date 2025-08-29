@@ -1,0 +1,274 @@
+/* Header styling */
+#id_header_div {
+    background-color: #3b5998; /* Blue background */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* "Blog Master" title */
+#id_site_name {
+    font-size: 32px;
+    font-weight: bold;
+    color: white; /* White text */
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    font-size: 20px; /* Increased from 18px */
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* User's full name link in header */
+#id_nav_profile {
+    font-size: 22px; /* Increased from 18px */
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+#id_nav_profile:hover {
+    text-decoration: underline;
+}
+
+/* Center the page name ("Login", "Register", "Global Stream", "Follower Stream", "Profile Page") */
+#id_page_name {
+    text-align: center;
+    font-size: 26px; /* Increased from 24px */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Ensure forms are centered and properly sized */
+#register-form,
+#login-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 0 auto; /* Center the form */
+}
+
+/* Space out form fields */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; /* Add spacing between fields */
+}
+
+/* Label Styling for Input Fields */
+label {
+    font-size: 20px; /* Increased from 16px */
+    font-weight: bold;
+}
+
+/* Adjust input width */
+input, textarea {
+    padding: 10px;
+    font-size: 22px; /* Increased from 20px */
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styling */
+button {
+    padding: 10px;
+    font-size: 22px; /* Increased from 20px */
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2e4a87;
+}
+
+/* Error messages */
+.errorlist {
+    color: red;
+    font-weight: bold;
+    font-size: 20px; /* Increased for better visibility */
+    margin-top: 10px;
+}
+
+/* Global Stream & Follower Stream: Styling for posts and comments */
+.post-container {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+/* Post Text Styling */
+[id^="id_post_text_"] {
+    font-size: 22px; /* Increased from 16px */
+    font-weight: normal;
+}
+
+/* Post Date Time Styling (Make it distinct) */
+[id^="id_post_date_time_"] {
+    font-size: 20px; /* Increased from 16px */
+    font-style: italic;
+    color: gray;
+}
+
+/* Post Profile Link */
+[id^="id_post_profile_"] {
+    font-size: 20px; /* Increased from 16px */
+    font-weight: bold;
+    color: #3b5998;
+    text-decoration: none;
+}
+
+[id^="id_post_profile_"]:hover {
+    text-decoration: underline;
+}
+
+/* Comments inside posts */
+.comment-container {
+    margin-left: 20px;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+}
+
+/* Comment Text Styling */
+[id^="id_comment_text_"] {
+    font-size: 20px; /* Increased from 16px */
+    font-weight: normal;
+}
+
+/* Comment Date Time Styling (Make it distinct) */
+[id^="id_comment_date_time_"] {
+    font-size: 18px; /* Increased from 16px */
+    font-style: italic;
+    color: gray;
+}
+
+/* Comment Profile Link */
+[id^="id_comment_profile_"] {
+    font-size: 20px; /* Increased from 16px */
+    font-weight: bold;
+    color: #3b5998;
+    text-decoration: none;
+}
+
+[id^="id_comment_profile_"]:hover {
+    text-decoration: underline;
+}
+
+/* Styling for Post and Comment input fields */
+#id_post_input_text,
+[id^="id_comment_input_text_"] {
+    padding: 10px;
+    font-size: 20px; /* Increased from 18px */
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for Post and Comment submit buttons */
+#id_post_button,
+[id^="id_comment_button_"] {
+    padding: 10px;
+    font-size: 20px; /* Increased from 18px */
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#id_post_button:hover,
+[id^="id_comment_button_"]:hover {
+    background-color: #2e4a87;
+}
+
+/* Profile Page Layout */
+.profile-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Profile Picture */
+#id_user_picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b5998;
+    margin-bottom: 10px;
+}
+
+/* Styling for bio input */
+#id_bio_input_text {
+    width: 100%;
+    max-width: 500px;
+    height: 80px;
+    font-size: 20px; /* Increased from 18px */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Profile Picture Upload Button */
+#id_profile_picture {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Update Profile Button */
+#id_update_profile_button {
+    padding: 10px;
+    font-size: 20px; /* Increased from 18px */
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#id_update_profile_button:hover {
+    background-color: #2e4a87;
+}
+
+/* Styling for the following users list */
+.following-list {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 20px; /* Increased from 18px */
+}
+
+.following-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.following-list li {
+    margin: 5px 0;
+}
+
+.following-list a {
+    color: #3b5998;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px; /* Increased for visibility */
+}
+
+.following-list a:hover {
+    text-decoration: underline;
+}

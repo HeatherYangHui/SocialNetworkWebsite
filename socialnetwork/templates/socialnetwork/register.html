@@ -1,0 +1,54 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block page_name %}
+    <h2>Register</h2>
+{% endblock %}
+
+{% block content %}
+    {% if form.errors %}
+        <ul class="errorlist">
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <form method="post" id="register-form">
+        <div class="form-group">
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" id="id_username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_password">Password:</label>
+            <input type="password" name="password1" id="id_password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_confirm_password">Confirm:</label>
+            <input type="password" name="password2" id="id_confirm_password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_email">E-mail:</label>
+            <input type="email" name="email" id="id_email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_first_name">First Name:</label>
+            <input type="text" name="first_name" id="id_first_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_last_name">Last Name:</label>
+            <input type="text" name="last_name" id="id_last_name" required>
+        </div>
+
+        {% csrf_token %}
+        <button type="submit" id="id_register_button">Submit</button>
+    </form>
+{% endblock %}
